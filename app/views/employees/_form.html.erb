@@ -1,0 +1,33 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <h3>There were some errors:</h3>
+    <ul>
+      <% @employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label 'First name:' %>
+  <%= f.text_field :first_name %> <br>
+
+  <%= f.label 'Last name' %>
+  <%= f.text_field :last_name %> <br>
+
+  <%= f.label 'Alias' %>
+  <%= f.text_field :alias %> <br>
+
+  <%= f.label 'Title' %>
+  <%= f.text_field :title %> <br>
+
+  <%= f.label 'Office' %>
+  <%= f.text_field :office %> <br>
+
+  <%= f.label 'Image URL' %>
+  <%= f.text_field :img_url %> <br>
+
+  <%= f.label 'Dog' %>
+  <%= f.collection_select :dog_id, @dog, :id, :name %> <br>
+
+  <%= f.submit %>  
+<% end %>
