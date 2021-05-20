@@ -1,0 +1,6 @@
+<h1><%= @employee.first_name + ' ' + @employee.last_name %></h1>
+<img src="<%= @employee.img_url %>" alt="Profile photo" width="200">
+<h3>Alias: <%= @employee.alias %></h3>
+<h4>Title: <%= @employee.title %></h4>
+<p>Office: <%= @employee.office %></p>
+<p>DOG! <%= link_to @dog.name, dog_path(@dog) %></p>
